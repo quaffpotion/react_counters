@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import TestImport from './TestImport'
+
 class App extends Component {
   render() {
     return (
@@ -17,8 +19,9 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React (Test_import)
+            Learn React
           </a>
+          <TestImport />
         </header>
       </div>
     );
