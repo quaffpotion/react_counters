@@ -29,7 +29,7 @@ class Coffee extends Component {
     }
 
     decrement = () => {
-        this.setState( (prevState) => (
+        this.setState( prevState => (
             {
                 cups: prevState.cups - this.props.step
             }
@@ -39,7 +39,7 @@ class Coffee extends Component {
     //note: not an arrow function so we need to use the code in the `constructor` function
     //to force increment to always be called by the coffee object so it's `this` is correct.
     increment() {
-        this.setState( (prevState) => {
+        this.setState( prevState => {
             return {
                 cups: prevState.cups + this.props.step
             }
