@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 
 class Coffee extends Component {
     state = {
-        cups: 1
+        cups: 0
     }
 
     decrement = () => {
-        this.setState( function(prevState) {
+        this.setState( (prevState) => {
             return {
-                cups: prevState.cups - 1
+                cups: prevState.cups - this.props.step
             }
         })
     }
 
     increment = () => {
-        this.setState(function(prevState) {
+        this.setState( (prevState) => {
             return {
-                cups: prevState.cups + 1
+                cups: prevState.cups + this.props.step
             }
         })
     }
