@@ -29,11 +29,11 @@ class Coffee extends Component {
     }
 
     decrement = () => {
-        this.setState( (prevState) => {
-            return {
+        this.setState( (prevState) => (
+            {
                 cups: prevState.cups - this.props.step
             }
-        })
+        ))
     }
 
     //note: not an arrow function so we need to use the code in the `constructor` function
