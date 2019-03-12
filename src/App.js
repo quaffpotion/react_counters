@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import TestImport from './TestImport'
 import Coffee from './Coffee'
 
 class App extends Component {
