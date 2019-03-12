@@ -5,16 +5,32 @@ class Coffee extends Component {
         cups: 1
     }
 
+    decrement = () => {
+        this.setState( function(prevState) {
+            return {
+                cups: prevState.cups - 1
+            }
+        })
+    }
+
+    increment = () => {
+        this.setState(function(prevState) {
+            return {
+                cups: prevState.cups + 1
+            }
+        })
+    }
+
     render() {
         return(
             <div>
-                <button>
+                <button onClick={this.decrement}>
                     decrement
                 </button>
                 <span syle = {{margin: "auto 12px"}}>
                     I have had {this.state.cups} cups of coffee
                 </span>
-                <button>
+                <button onClick={this.increment}>
                     increment
                 </button>
             </div>
