@@ -4,21 +4,28 @@ class Coffee extends Component {
 
     //This is included to give a contrast to using arrow functions.
     //See the different versions of increment and decrement below
-    constructor() {
+    constructor(props) {
         //console.log(this) will throw an error because `this` isn't initialized
         //until super is called. However in reactarmoury tutorial they don't seem
         //to need to do this (in Timer.js)
-        super()
+        super(props)
 
-        //Coffee object with state.cups = 0 i.e. constructor runs after other object
+        //Could also initialize state here however it isn't necessary (see below)
+        // state = {
+        //     cups: this.props.initial || 0
+        // }
+
+        //Coffee object with state.cups = the default i.e. constructor runs after other object
         //variables are initialized
         console.log(this)
+
+
         this.increment = this.increment.bind(this)
 
     }
 
     state = {
-        cups: 0
+        cups: this.props.initial || 0
     }
 
     decrement = () => {
