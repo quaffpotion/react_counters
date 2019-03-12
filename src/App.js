@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import TestImport from './TestImport'
+import Coffee from './Coffee'
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <Coffee />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -21,7 +23,6 @@ class App extends Component {
           >
             Learn React
           </a>
-          <TestImport />
         </header>
       </div>
     );
