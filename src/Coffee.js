@@ -17,7 +17,7 @@ class Coffee extends Component {
 
         //Coffee object with state.cups = the default i.e. constructor runs after other object
         //variables are initialized
-        console.log(this)
+        //console.log(this)
 
 
         this.increment = this.increment.bind(this)
