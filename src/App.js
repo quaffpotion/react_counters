@@ -17,6 +17,9 @@ class App extends Component {
     value: "Add a todo..."
   }
 
+  deleteTodo = (name) => {
+    this.setState(state => ({...state, counters: state.counters.filter(i => i.name !== name) }) )
+  }
 
   submitTodo = (name) => {
     this.setState(
@@ -54,7 +57,7 @@ class App extends Component {
             <button type="submit">Add</button>
           </form>
 
-          {this.state.counters.map(data => <Coffee key={data.name} {...data}/>)}
+          {this.state.counters.map(data => <Coffee key={data.name} delete={() => this.deleteTodo(data.name)} {...data}/>)}
           <img src={logo} className="App-logo" alt="logo" />
           <span>Total: {this.state.total}</span>
         </header>

@@ -58,6 +58,9 @@ class Coffee extends Component {
                 <button onClick={this.increment}>
                     increment
                 </button>
+                <button onClick={this.props.delete}>
+                    delete
+                </button> 
             </div>
         )
     }
