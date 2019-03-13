@@ -53,7 +53,7 @@ class Coffee extends Component {
                     decrement
                 </button>
                 <span syle = {{margin: "auto 12px"}}>
-                    I have had {this.state.cups} cups of coffee
+                    I have {this.state.cups} {this.props.name}
                 </span>
                 <button onClick={this.increment}>
                     increment
