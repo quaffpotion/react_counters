@@ -31,7 +31,7 @@ class Coffee extends Component {
     decrement = () => {
         this.setState( prevState => (
             {
-                cups: prevState.cups - this.props.step
+                cups: prevState.cups - (this.props.step ? this.props.step : 1)
             }
         ))
     }
@@ -41,7 +41,7 @@ class Coffee extends Component {
     increment() {
         this.setState( prevState => {
             return {
-                cups: prevState.cups + this.props.step
+                cups: prevState.cups + (this.props.step ? this.props.step : 1)
             }
         })
     }
