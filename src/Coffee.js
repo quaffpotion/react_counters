@@ -25,13 +25,13 @@ class Coffee extends Component {
     }
 
     state = {
-        cups: this.props.initial ? this.props.initial : 0
+        amount: this.props.amount ? this.props.amount : 0
     }
 
     decrement = () => {
         this.setState( prevState => (
             {
-                cups: prevState.cups - (this.props.step ? this.props.step : 1)
+                amount: prevState.amount - (this.props.step ? this.props.step : 1)
             }
         ))
     }
@@ -41,7 +41,7 @@ class Coffee extends Component {
     increment() {
         this.setState( prevState => {
             return {
-                cups: prevState.cups + (this.props.step ? this.props.step : 1)
+                amount: prevState.amount + (this.props.step ? this.props.step : 1)
             }
         })
     }
@@ -53,7 +53,7 @@ class Coffee extends Component {
                     decrement
                 </button>
                 <span syle = {{margin: "auto 12px"}}>
-                    I have {this.state.cups} {this.props.name}
+                    I have {this.state.amount} {this.props.name}
                 </span>
                 <button onClick={this.increment}>
                     increment
