@@ -25,7 +25,7 @@ class Coffee extends Component {
     }
 
     state = {
-        cups: this.props.initial || 0
+        cups: this.props.initial ? this.props.initial : 0
     }
 
     decrement = () => {
