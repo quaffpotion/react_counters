@@ -4,21 +4,43 @@ import './App.css';
 
 import Coffee from './Coffee'
 
+class CoffeeContainer extends Component {
+  render() {
+    return(
+      <div>
+      {this.props.children}
+      </div>
+    )
+  } 
+}
+
+
+
 class App extends Component {
 
   state = {
     counters: [
       {name: "Coffee", step: 2, amount: 5},
-      {name: "Apples", step: 1},
-      {name: "Oranges"}
+      {name: "Apples", step: 1, amount: 2},
+      {name: "Oranges", amount: 1}
 
     ],
-    total: 0,
+    total: 8,
     value: "Add a todo..."
   }
 
   deleteTodo = (name) => {
     this.setState(state => ({...state, counters: state.counters.filter(i => i.name !== name) }) )
+  }
+
+  onPress = (change) => {
+
+    this.setState( state => ({...state, total: state.total+change}) )
+    // this.state.counters.map( item => console.log(item.amount))
+    // console.log("Total: " + this.state.total)
+
+    // let newtotal = this.state.counters.reduce((total, item) => ( item.amount?item.amount:0 + total), 0)
+    // this.setState(state => ({ ...state, total: newtotal }))
   }
 
   submitTodo = (name) => {
@@ -57,7 +79,16 @@ class App extends Component {
             <button type="submit">Add</button>
           </form>
 
-          {this.state.counters.map(data => <Coffee key={data.name} delete={() => this.deleteTodo(data.name)} {...data}/>)}
+          <CoffeeContainer>
+            {this.state.counters.map(data =>
+              <Coffee
+                key={data.name}
+                delete={() => this.deleteTodo(data.name)} {...data}
+                onPress={this.onPress}
+              />)
+            }
+          </CoffeeContainer>
+          
           <img src={logo} className="App-logo" alt="logo" />
           <span>Total: {this.state.total}</span>
         </header>

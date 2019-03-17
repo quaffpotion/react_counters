@@ -34,6 +34,7 @@ class Coffee extends Component {
                 amount: prevState.amount - (this.props.step ? this.props.step : 1)
             }
         ))
+        this.props.onPress(-this.props.step?-this.props.step:-1)
     }
 
     //note: not an arrow function so we need to use the code in the `constructor` function
@@ -44,6 +45,7 @@ class Coffee extends Component {
                 amount: prevState.amount + (this.props.step ? this.props.step : 1)
             }
         })
+        this.props.onPress(this.props.step ? this.props.step : 1)
     }
 
     render() {
